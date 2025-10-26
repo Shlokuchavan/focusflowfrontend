@@ -1,0 +1,205 @@
+/* frontend/src/components/Navigation.css */
+/* ===== Navigation ===== */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    margin: 1rem;
+    position: fixed;
+    width: calc(100% - 2rem);
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.dark .glass-nav {
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+}
+
+.icon-blossom {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9eb5 0%, #b19cd9 100%);
+    border-radius: 50%;
+    position: relative;
+}
+
+.icon-blossom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 30%;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.brand-text {
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.dark .brand-text {
+    color: #ffffff;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+/* ===== Theme Toggle Button ===== */
+.theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dark .theme-toggle-btn {
+    background: rgba(59, 59, 59, 0.445);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .theme-toggle-btn:hover {
+    background: rgba(59, 59, 59, 0.6);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Button System ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+}
+
+.btn-primary {
+    background: rgba(59, 59, 59, 0.445);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: rgba(59, 59, 59, 0.6);
+    transform: translateY(-2px);
+}
+
+.dark .btn-primary {
+    background: rgba(59, 59, 59, 0.445);
+    color: white;
+}
+
+.dark .btn-primary:hover {
+    background: rgba(59, 59, 59, 0.6);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #000000;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dark .btn-secondary {
+    background: rgba(59, 59, 59, 0.445);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.dark .btn-secondary:hover {
+    background: rgba(59, 59, 59, 0.6);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+.btn-xlarge {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.25rem;
+    border-radius: 16px;
+}
+
+.btn-icon {
+    font-size: 1.2em;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .brand-text {
+        font-size: 1.5rem;
+    }
+
+    .nav-actions {
+        gap: 0.5rem;
+    }
+
+    .theme-toggle-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,338 @@
+/* frontend/src/index.css - Professional FocusFlow Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Light Theme Colors */
+    --primary-bg: #ffffff;
+    --secondary-bg: #f8fafc;
+    --tertiary-bg: #f1f5f9;
+    --primary-text: #1e293b;
+    --secondary-text: #64748b;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --border-color: #e2e8f0;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Status Colors */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --info: #3b82f6;
+}
+
+[data-theme="dark"] {
+    /* Dark Theme Colors - Pure Black Theme */
+    --dark-theme: rgba(15, 15, 15, 0.9);
+    --primary-bg: #000000;
+    /* Pure black */
+    --secondary-bg: #0a0a0a;
+    /* Near black */
+    --tertiary-bg: #111111;
+    /* Dark gray */
+    --primary-text: #ffffff;
+    --secondary-text: #a0a0a0;
+    --accent-color: #ffffff;
+    --accent-hover: #f0f0f0;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+@layer base {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--primary-bg);
+        color: var(--primary-text);
+        line-height: 1.6;
+        transition: all 0.3s ease;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--primary-text);
+    }
+}
+
+@layer components {
+
+    /* Professional Cards */
+    .pro-card {
+        background: var(--secondary-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        box-shadow: var(--card-shadow);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+    }
+
+    .pro-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--card-shadow-hover);
+        border-color: var(--accent-color);
+    }
+
+    /* Professional Buttons */
+    .pro-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background: var(--accent-color);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+    }
+
+    .pro-btn:hover {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .pro-btn-secondary {
+        background: transparent;
+        color: var(--primary-text);
+        border: 1px solid var(--border-color);
+    }
+
+    .pro-btn-secondary:hover {
+        background: var(--tertiary-bg);
+        border-color: var(--accent-color);
+        box-shadow: none;
+    }
+
+    /* Navigation */
+    .nav-container {
+        background: var(--secondary-bg);
+        border-bottom: 1px solid var(--border-color);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-link {
+        color: var(--secondary-text);
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .nav-link:hover {
+        color: var(--accent-color);
+        background: var(--tertiary-bg);
+    }
+
+    .nav-link.active {
+        color: var(--accent-color);
+        background: var(--tertiary-bg);
+    }
+
+    .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 16px;
+        right: 16px;
+        height: 2px;
+        background: var(--accent-color);
+        border-radius: 1px;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+        background: var(--tertiary-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 50px;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+        border-color: var(--accent-color);
+    }
+
+    .theme-icon {
+        padding: 6px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+    }
+
+    .theme-icon.active {
+        background: var(--accent-color);
+        color: white;
+    }
+
+    /* Stats Cards */
+    .stat-card {
+        background: var(--secondary-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+    }
+
+    .stat-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-size: 20px;
+    }
+
+    .stat-streak {
+        background: linear-gradient(135deg, #fef3c7, #f59e0b);
+        color: #92400e;
+    }
+
+    .stat-tasks {
+        background: linear-gradient(135deg, #d1fae5, #10b981);
+        color: #065f46;
+    }
+
+    .stat-plants {
+        background: linear-gradient(135deg, #dbeafe, #3b82f6);
+        color: #1e40af;
+    }
+
+    .stat-coins {
+        background: linear-gradient(135deg, #fef3c7, #f59e0b);
+        color: #92400e;
+    }
+
+    /* Forms */
+    .pro-input {
+        width: 100%;
+        padding: 12px 16px;
+        background: var(--secondary-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        color: var(--primary-text);
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        transition: all 0.2s ease;
+    }
+
+    .pro-input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .pro-input::placeholder {
+        color: var(--secondary-text);
+    }
+
+    /* Task Cards */
+    .task-card {
+        background: var(--secondary-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 16px;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+    .task-card:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: var(--card-shadow-hover);
+    }
+}
+
+@layer utilities {
+    .text-gradient {
+        background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Add to your main CSS file or index.css */
+.dark {
+    color-scheme: dark;
+}
+
+.dark body {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+.dark * {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Remove any gradient that might cause blue tints */
+.dark .gradient-bg {
+    background: #000000 !important;
+}

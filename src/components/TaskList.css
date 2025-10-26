@@ -1,0 +1,222 @@
+/* frontend/src/components/TaskList.css - UPDATED */
+/* Task Form Styles */
+.task-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .task-form {
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Input Fields - White in Dark Mode */
+.task-input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 10px;
+    color: #000000 !important;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: #000000 !important;
+    background: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.dark .task-input {
+    background: rgba(59, 59, 59, 0.445) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #000000 !important;
+}
+
+.dark .task-input:focus {
+    border-color: #000000 !important;
+    background: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.task-input::placeholder {
+    color: #666666 !important;
+}
+
+.dark .task-input::placeholder {
+    color: #666666 !important;
+}
+
+/* Textarea */
+.task-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 10px;
+    color: #000000 !important;
+    font-size: 0.95rem;
+    resize: vertical;
+    min-height: 80px;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.dark .task-textarea {
+    background: rgba(59, 59, 59, 0.445) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #000000 !important;
+}
+
+.task-textarea:focus {
+    outline: none;
+    border-color: #000000 !important;
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+.dark .task-textarea:focus {
+    border-color: #000000 !important;
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+/* Select Fields */
+.task-select {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 10px;
+    color: #000000 !important;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.dark .task-select {
+    background: rgba(59, 59, 59, 0.445) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #000000 !important;
+}
+
+.task-select:focus {
+    outline: none;
+    border-color: #000000 !important;
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+.dark .task-select:focus {
+    border-color: #000000 !important;
+    background: rgba(59, 59, 59, 0.445) !important;
+}
+
+/* Form Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background: rgba(59, 59, 59, 0.9) !important;
+    color: white !important;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: rgba(59, 59, 59, 1) !important;
+    transform: translateY(-1px);
+}
+
+.dark .btn-primary {
+    background: rgba(59, 59, 59, 0.9) !important;
+    color: white !important;
+}
+
+.dark .btn-primary:hover {
+    background: rgba(59, 59, 59, 1) !important;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    color: #000000 !important;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+.dark .btn-secondary {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #000000 !important;
+}
+
+.dark .btn-secondary:hover {
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+/* Ensure all text in form is proper in dark mode */
+.dark .task-form * {
+    color: #000000 !important;
+}
+
+.dark .task-form input,
+.dark .task-form textarea,
+.dark .task-form select {
+    color: #f5f5f5 !important;
+}
+
+.dark .task-form option {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Add to your existing CSS */
+.dark .glass-card {
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .text-gray-800 {
+    color: #ffffff !important;
+}
+
+.dark .btn-primary {
+    background: rgba(59, 59, 59, 0.9) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.dark .btn-primary:hover {
+    background: rgba(59, 59, 59, 1) !important;
+    transform: translateY(-2px);
+}

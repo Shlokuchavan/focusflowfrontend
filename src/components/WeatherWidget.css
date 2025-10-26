@@ -1,0 +1,49 @@
+/* frontend/src/components/WeatherWidget.css */
+.weather-widget {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    color: #000000;
+}
+
+.weather-widget:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.weather-icon {
+    font-size: 1.2rem;
+}
+
+.weather-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Dark theme styles */
+.dark .weather-widget {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.dark .weather-widget:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .weather-label {
+        display: none;
+    }
+
+    .weather-widget {
+        padding: 8px 12px;
+    }
+}

@@ -1,0 +1,109 @@
+/* frontend/src/components/StatsCard.css */
+.stats-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.stats-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.stats-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.stats-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+.stats-title {
+    color: #666666;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.stats-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.stats-card:hover .stats-glow {
+    opacity: 1;
+}
+
+/* Pure Black Dark Theme Support */
+.dark .stats-card {
+    background: rgba(59, 59, 59, 0.445);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark .stats-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.dark .stats-value {
+    color: #ffffff;
+}
+
+.dark .stats-title {
+    color: #ffffff;
+}
+
+.dark .stats-glow {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+}
+
+/* Ensure all text in dark mode is white */
+.dark .stats-card * {
+    color: #ffffff !important;
+}

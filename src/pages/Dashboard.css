@@ -1,0 +1,238 @@
+/* frontend/src/pages/Dashboard.css */
+.dashboard-container {
+    margin-top: 50px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+
+}
+
+.dark .dashboard-container {
+    background: linear-gradient(135deg, #000000 0%, #000000 100%);
+}
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.dashboard-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .dashboard-header {
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+
+.dark .dashboard-title {
+    color: #ffffff;
+}
+
+.dashboard-subtitle {
+    font-size: 1.1rem;
+    color: #666666;
+}
+
+.dark .dashboard-subtitle {
+    color: #cccccc;
+}
+
+.stats-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-bottom: 2rem;
+}
+
+.dashboard-main-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 2fr 1fr;
+}
+
+.task-section,
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .dashboard-card {
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.dark .card-title {
+    color: #ffffff;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+/* Garden Preview */
+.garden-preview-content {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 2rem;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark .garden-preview-content {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.garden-preview-active,
+.garden-preview-empty {
+    text-align: center;
+}
+
+.garden-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.garden-text {
+    color: #666666;
+    font-size: 1rem;
+}
+
+.dark .garden-text {
+    color: #cccccc;
+}
+
+/* Buttons */
+.dashboard-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.dashboard-btn.primary {
+    background: rgba(59, 59, 59, 0.445);
+    color: white;
+}
+
+.dashboard-btn.primary:hover {
+    background: rgba(59, 59, 59, 0.6);
+    transform: translateY(-2px);
+}
+
+.dark .dashboard-btn.primary {
+    background: rgba(59, 59, 59, 0.445);
+    color: white;
+}
+
+.dark .dashboard-btn.primary:hover {
+    background: rgba(59, 59, 59, 0.6);
+}
+
+.quick-action-btn {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    text-align: left;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.quick-action-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dark .quick-action-btn {
+    background: rgba(59, 59, 59, 0.445);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.dark .quick-action-btn:hover {
+    background: rgba(59, 59, 59, 0.6);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-content {
+        padding: 1rem;
+    }
+
+    .dashboard-title {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header {
+        padding: 1.5rem;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+}
